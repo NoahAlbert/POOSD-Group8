@@ -2,7 +2,8 @@
 
 ## Contributors:
 
-- (will update later)
-- Jason Torres (API)
+- Noah Albert - mySQL/Database
+- AJ Martin - Frontend
+- Jason Torres - API
 
 Currently this project just has the professor provided files, we will make changes to them later
