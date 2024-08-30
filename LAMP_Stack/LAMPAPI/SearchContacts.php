@@ -1,11 +1,11 @@
 <?php
-//NEED TO ADD PHONE/EMAIl SEARCH
+//TODO: Add phone/email search
 	$inData = getRequestInfo();
 	
 	$searchResults = "";
 	$searchCount = 0;
 
-	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
+	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331"); 
 	if ($conn->connect_error) 
 	{
 		returnWithError( $conn->connect_error );
@@ -14,7 +14,7 @@
 	{
 		$stmt = $conn->prepare("select Name from Colors where (FirstName like ? OR LastName like?) and UserID=?");
 		$colorName = "%" . $inData["search"] . "%";
-		$stmt->bind_param("sss", $colorName, $colorName, $inData["userId"]);
+		$stmt->bind_param("ss", $colorName, $inData["userId"]);
 		$stmt->execute();
 		
 		$result = $stmt->get_result();
@@ -26,8 +26,9 @@
 				$searchResults .= ",";
 			}
 			$searchCount++;
-			//$searchResults .= '"' . $row["FirstName"] . '"';
-			$searchResults .='{"FirstName" : "' . $row["FirstName"]. '", "LastName" : "' . $row["LastName"]. '", "Phone" : "' . $row["Phone"]. '", "Email" : "' . $row["Email"]. '"}';
+			//$searchResults .='{"FirstName" : "' . $row["FirstName"]. '", "LastName" : "' . $row["LastName"]. '", "Phone" : "' . $row["Phone"]. '", "Email" : "' . $row["Email"]. '"}';
+			$searchResults .= '{"FirstName" : "' . $row["FirstName"] . '"}';
+
 		}
 		
 		if( $searchCount == 0 )
