@@ -58,6 +58,15 @@ function doLogin()
 
 }
 
+function goRegister() 
+{
+	window.location.href = 'register.html';
+}
+
+function doRegister() {
+	console.log("placeholder");
+}
+
 function saveCookie()
 {
 	let minutes = 20;
