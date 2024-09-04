@@ -1,5 +1,7 @@
 <?php
-//TODO: Add phone/email search
+	/*TODO:
+	* Ask about LastName missing from the Contacts Database
+	*/
 	$inData = getRequestInfo();
 	
 	$searchResults = "";
@@ -12,9 +14,9 @@
 	} 
 	else
 	{
-		$stmt = $conn->prepare("select Name from Colors where (FirstName like ? OR LastName like?) and UserID=?");
-		$colorName = "%" . $inData["search"] . "%";
-		$stmt->bind_param("ss", $colorName, $inData["userId"]);
+		$stmt = $conn->prepare("select * from Contacts where (Name like ? OR Phone like ? OR Email like ?) and UserID=?");
+		$search = "%" . $inData["search"] . "%";
+		$stmt->bind_param("ssss", $search, $search, $search, $inData["userId"]);
 		$stmt->execute();
 		
 		$result = $stmt->get_result();
@@ -26,9 +28,7 @@
 				$searchResults .= ",";
 			}
 			$searchCount++;
-			//$searchResults .='{"FirstName" : "' . $row["FirstName"]. '", "LastName" : "' . $row["LastName"]. '", "Phone" : "' . $row["Phone"]. '", "Email" : "' . $row["Email"]. '"}';
-			$searchResults .= '{"FirstName" : "' . $row["FirstName"] . '"}';
-
+			$searchResults .='{"Name" : "' . $row["Name"]. '", "Phone" : "' . $row["Phone"]. '", "Email" : "' . $row["Email"]. '"}';
 		}
 		
 		if( $searchCount == 0 )
@@ -57,7 +57,7 @@
 	
 	function returnWithError( $err )
 	{
-		$retValue = '{"id":0,"firstName":"","lastName":"","error":"' . $err . '"}';
+		$retValue = '{"id":0,"Name":"","Phone":"","Email":"","error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
