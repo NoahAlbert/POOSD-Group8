@@ -11,12 +11,16 @@
     </head>
     <body>
         <h1 id="title"> Register Page </h1>
-        <div id="loginDiv">
-	        <span id="inner-title">ENTER DESIRED USERNAME AND PASSWORD</span>
+        <div id="backDiv">
+	        <button type="button" id="RegisterButton" class="buttons" onclick="goLogin();"> Back to Login </button>
+        </div>
+        <div id="RegisterDiv">
+	        <span id="inner-title">ENTER DESIRED INFORMATION</span>
+	        <input type="text" id="firstName" placeholder="First Name" /><br />
+	        <input type="text" id="lastName" placeholder="Last Name"/><br />
 	        <input type="text" id="loginName" placeholder="Username" /><br />
-	        <input type="password" id="loginPassword" placeholder="Password"/><br />
 	        <button type="button" id="RegisterButton" class="buttons" onclick="doRegister();"> Register </button>
-	        <span id="loginResult"></span>
+	        <span id="RegisterResult"></span>
         </div>
     </body>
 </html>

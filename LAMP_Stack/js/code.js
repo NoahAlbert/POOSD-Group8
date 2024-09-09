@@ -46,7 +46,7 @@ function doLogin()
 
 				saveCookie();
 	
-				window.location.href = "color.html";
+				window.location.href = "contacts.html";
 			}
 		};
 		xhr.send(jsonPayload);
@@ -63,8 +63,44 @@ function goRegister()
 	window.location.href = 'register.html';
 }
 
+function goLogin() 
+{
+	window.location.href = 'index.html';
+}
+
 function doRegister() {
-	console.log("placeholder");
+	let login = document.getElementById("loginName").value;
+	let password = document.getElementById("loginPassword").value;
+	let firstName = document.getElementById("firstName").value;
+	let lastName = document.getElementById("lastName").value;
+
+	document.getElementById("registerResult").innerHTML = "";
+
+	let tmp = {firstName:firstName, lastName:lastName, login:login, password:password};
+	let jsonPayload = JSON.stringify(tmp);
+
+	let url = urlBase + '/Register.' + extension;
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				saveCookie();	
+				window.location.href = "contacts.html";
+				document.getElementById("RegisterResult").innerHTML = "Registration Successful"
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("RegisterResult").innerHTML = err.message;
+	}
+
 }
 
 function saveCookie()
@@ -119,13 +155,15 @@ function doLogout()
 
 function addColor()
 {
-	let newColor = document.getElementById("colorText").value;
+	let name = document.getElementById("contactName").value;
+	let phoneNumber = document.getElementById("phoneNumber").value;
+	let email = document.getElementById("contactEmail").value;
 	document.getElementById("colorAddResult").innerHTML = "";
 
-	let tmp = {color:newColor,userId,userId};
+	let tmp = {name:name, phone:phoneNumber, email:email, userId:userId};
 	let jsonPayload = JSON.stringify( tmp );
 
-	let url = urlBase + '/AddColor.' + extension;
+	let url = urlBase + '/AddContacts.' + extension;
 	
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -136,14 +174,14 @@ function addColor()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				document.getElementById("colorAddResult").innerHTML = "Color has been added";
+				document.getElementById("contactAddResult").innerHTML = "Contact has been added";
 			}
 		};
 		xhr.send(jsonPayload);
 	}
 	catch(err)
 	{
-		document.getElementById("colorAddResult").innerHTML = err.message;
+		document.getElementById("contactAddResult").innerHTML = err.message;
 	}
 	
 }
