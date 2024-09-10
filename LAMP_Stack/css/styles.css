@@ -1,3 +1,22 @@
+.column 
+{
+    float: left;
+    width: 33.33%;
+}
+  
+.row:after 
+{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.tableElement 
+{
+    border: 2px solid black;
+    margin: 0px;
+}
+
 body 
 {
     background-color: #707070;
@@ -69,7 +88,7 @@ body
     font-size: 30px;
 }
 
-#lastName
+#loginName
 {
 	font-size: 30px;
 }
@@ -86,7 +105,7 @@ body
 {
 	font-size: 30px;
 }
-#colorText
+#contactText
 {
 	font-size: 30px;
 }
@@ -142,11 +161,11 @@ select{
     font-family: 'Ubuntu', sans-serif;
 }
 
-#colorSearchResult{
+#contactSearchResult{
     display: none;
 }
 
-#colorAddResult{
+#contactAddResult{
     display: inline-block;
     font-size: 0.8em;
     width: 90%;
