@@ -74,7 +74,7 @@ function doRegister() {
 	let firstName = document.getElementById("firstName").value;
 	let lastName = document.getElementById("lastName").value;
 
-	document.getElementById("registerResult").innerHTML = "";
+	//document.getElementById("registerResult").innerHTML = "";
 
 	let tmp = {firstName:firstName, lastName:lastName, login:login, password:password};
 	let jsonPayload = JSON.stringify(tmp);
@@ -153,12 +153,12 @@ function doLogout()
 	window.location.href = "index.html";
 }
 
-function addColor()
+function addContact()
 {
 	let name = document.getElementById("contactName").value;
 	let phoneNumber = document.getElementById("phoneNumber").value;
 	let email = document.getElementById("contactEmail").value;
-	document.getElementById("colorAddResult").innerHTML = "";
+	document.getElementById("contactAddResult").innerHTML = "";
 
 	let tmp = {name:name, phone:phoneNumber, email:email, userId:userId};
 	let jsonPayload = JSON.stringify( tmp );
