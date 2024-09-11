@@ -32,6 +32,34 @@ body
     color: #FFFFFF;
 }
 
+#contactsTable
+{
+    width: 100%;
+    border: 1px solid lightblue;
+    font-size: 18px;
+}
+
+#contactsTable th, #contactsTable td 
+{
+    text-align: left;
+    padding: 18px;
+}
+
+#contactsTable td 
+{
+    background-color: lightblue;
+}
+
+#contactsTable th
+{
+    background-color: cornflowerblue;
+}
+
+#contactsTable tr 
+{
+    border-bottom: 1px solid white;
+}
+
 #loginDiv
 {
     font-size: 30px;

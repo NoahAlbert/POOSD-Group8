@@ -155,14 +155,6 @@ function doLogout()
 
 function addContact()
 {
-<<<<<<< HEAD
-	let name = document.getElementById("contactName").value;
-	let phoneNumber = document.getElementById("phoneNumber").value;
-	let email = document.getElementById("contactEmail").value;
-	document.getElementById("contactAddResult").innerHTML = "";
-
-	let tmp = {name:name, phone:phoneNumber, email:email, userId:userId};
-=======
 	let Name = document.getElementById("contactName").value;
 	let Phone = document.getElementById("phoneNumber").value;
 	let Email = document.getElementById("contactEmail").value;
@@ -174,7 +166,6 @@ function addContact()
         Email: Email,
         UserId: userId
     };
->>>>>>> Frontend
 	let jsonPayload = JSON.stringify( tmp );
 
 	let url = urlBase + '/AddContacts.' + extension;
@@ -205,9 +196,7 @@ function searchContact()
 	let srch = document.getElementById("searchText").value;
 	document.getElementById("contactSearchResult").innerHTML = "";
 	
-	let nameList = "";
-	let numberList = "";
-	let emailList = "";
+	let table = "";
 
 	let tmp = {search:srch,userId:userId};
 	let jsonPayload = JSON.stringify( tmp );
@@ -223,25 +212,30 @@ function searchContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
+				//Sets up the table and headers
+				table += `<table id="contactsTable">`;
+				table += `<tr id="header">`;
+				table += `<th style="width:30%;">Name</th>`;
+				table += `<th style="width:30%;">Phone Number</th>`;
+				table += `<th style="width:30%;">Email</th>`;
+				table += `<th style="width:10%;">Edit</th>`;
+				table += `</tr>`;
+
 				document.getElementById("contactSearchResult").innerHTML = "Contact(s) has been retrieved";
 				let jsonObject = JSON.parse( xhr.responseText );
 				
 				for( let i=0; i<jsonObject.results.length; i++ )
 				{	
-
-					nameList += `<p class="tableElement">${jsonObject.results[i]["Name"]}</p>`;
-					numberList += `<p class="tableElement">${jsonObject.results[i]["Phone"]}</p>`;
-					emailList += `<p class="tableElement">${jsonObject.results[i]["Email"]}</p>`;
-					if( i < jsonObject.results.length - 1 )
-					{
-						//nameList += "<br />\r\n";
-						//numberList += "<br />\r\n";
-						//emailList += "<br />\r\n";
-					}
+					table += `<tr>`;
+					table += `<td>${jsonObject.results[i]["Name"]}</td>`;
+					table += `<td>${jsonObject.results[i]["Phone"]}</td>`;
+					table += `<td>${jsonObject.results[i]["Email"]}</td>`;
+					table += `<td><button>Edit</button>`;
+					table += `<button>Delete</button></td>`;
+					table += `</tr>`;
 				}
-				document.getElementById("nameColumn").innerHTML = nameList;
-				document.getElementById("numberColumn").innerHTML = numberList;
-				document.getElementById("emailColumn").innerHTML = emailList;
+				table += `</table>`;
+				document.getElementById("contactTableSpan").innerHTML = table; 
 			}
 		};
 		xhr.send(jsonPayload);
