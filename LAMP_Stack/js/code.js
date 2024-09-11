@@ -1,4 +1,4 @@
-const urlBase = 'http://159.89.234.129/LAMPAPI';
+const urlBase = 'http://cop4331contacts.online/LAMPAPI';
 const extension = 'php';
 
 let userId = 0;
@@ -155,12 +155,26 @@ function doLogout()
 
 function addContact()
 {
+<<<<<<< HEAD
 	let name = document.getElementById("contactName").value;
 	let phoneNumber = document.getElementById("phoneNumber").value;
 	let email = document.getElementById("contactEmail").value;
 	document.getElementById("contactAddResult").innerHTML = "";
 
 	let tmp = {name:name, phone:phoneNumber, email:email, userId:userId};
+=======
+	let Name = document.getElementById("contactName").value;
+	let Phone = document.getElementById("phoneNumber").value;
+	let Email = document.getElementById("contactEmail").value;
+	document.getElementById("contactAddResult").innerHTML = "";
+
+	let tmp = {
+        Name: Name,
+        Phone: Phone,
+        Email: Email,
+        UserId: userId
+    };
+>>>>>>> Frontend
 	let jsonPayload = JSON.stringify( tmp );
 
 	let url = urlBase + '/AddContacts.' + extension;
