@@ -4,7 +4,7 @@
 	$name = $inData["name"];
 	$phone = $inData["phone"];
 	$email = $inData["email"];
-	$id = $inData["id"]; // UserId to identify the contact
+	$id = $inData["id"];
 
 	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
 	if ($conn->connect_error) 
