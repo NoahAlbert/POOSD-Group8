@@ -4,6 +4,7 @@ const extension = 'php';
 let userId = 0;
 let firstName = "";
 let lastName = "";
+const map1 = new Map();
 
 function doLogin()
 {
@@ -230,9 +231,11 @@ function searchContact()
 					table += `<td id="nameColumn${i}">${jsonObject.results[i]["Name"]}</td>`;
 					table += `<td id="phoneColumn${i}">${jsonObject.results[i]["Phone"]}</td>`;
 					table += `<td id="emailColumn${i}">${jsonObject.results[i]["Email"]}</td>`;
-					table += `<td><button id="editButton${i}" onClick=editContact(${i})>Edit</button>`;
-					table += `<button>Delete</button></td>`;
+					table += `<td><span id=editButtonSpan${i}><button id="editButton${i}" onClick=editContact(${i})>Edit</button></span>`;
+					table += `<span id="deleteButtonSpan${i}">`;
+					table += `<button>Delete</button></span></td>`;
 					table += `</tr>`;
+					map1.set(i, jsonObject.results[i]["ID"]);
 				}
 				table += `</table>`;
 				document.getElementById("contactTableSpan").innerHTML = table; 
@@ -257,19 +260,19 @@ function editContact(index) {
 	document.getElementById(`phoneColumn${index}`).innerHTML = `<input id="phoneInput${index}" type="text" value=${oldPhone}></input>`;
 	document.getElementById(`emailColumn${index}`).innerHTML = `<input id="emailInput${index}" type="text" value=${oldEmail}></input>`;
 
-	document.getElementById(`editButton${index}`).innerHTML = `<button id="updateButton${i}" onClick=updateContact(${i})>Update</button>`;
+	document.getElementById(`editButtonSpan${index}`).innerHTML = `<button id="updateButton${index}" onClick=updateContact(${index})>Update</button>`;
 }
 
 function updateContact(index) {
-	let newName = document.getElementById(`nameInput${index}`).innerHTML;
-	let newPhone = document.getElementById(`phoneInput${index}`).innerHTML;
-	let newEmail = document.getElementById(`emailInput${index}`).innerHTML;
+	let newName = document.getElementById(`nameInput${index}`).value;
+	let newPhone = document.getElementById(`phoneInput${index}`).value;
+	let newEmail = document.getElementById(`emailInput${index}`).value;
 
 	let tmp = {
-        Name: newName,
-        Phone: newPhone,
-        Email: newEmail,
-        UserId: userId
+        name: newName,
+        phone: newPhone,
+        email: newEmail,
+        id: map1.get(index)
     };
 	let jsonPayload = JSON.stringify( tmp );
 
@@ -284,9 +287,11 @@ function updateContact(index) {
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				document.getElementById(`nameInput${index}`).innerHTML = `<td id="nameColumn${index}">${newName}</td>`; 
-				document.getElementById(`phoneInput${index}`).innerHTML = `<td id="nameColumn${index}">${newPhone}</td>`; 
-				document.getElementById(`emailInput${index}`).innerHTML = `<td id="nameColumn${index}">${newEmail}</td>`; 
+				document.getElementById(`nameColumn${index}`).innerHTML = newName;//`<td id="nameColumn${index}">${newName}</td>`; 
+				document.getElementById(`phoneColumn${index}`).innerHTML = newPhone;//`<td id="phoneColumn${index}">${newPhone}</td>`; 
+				document.getElementById(`emailColumn${index}`).innerHTML = newEmail;//`<td id="emailColumn${index}">${newEmail}</td>`; 
+
+				document.getElementById(`editButtonSpan${index}`).innerHTML = `<button id="editButton${index}" onClick=editContact(${index})>Edit</button>`;
 			}
 		};
 		xhr.send(jsonPayload);
