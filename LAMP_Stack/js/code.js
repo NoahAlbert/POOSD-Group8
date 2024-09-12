@@ -227,10 +227,10 @@ function searchContact()
 				for( let i=0; i<jsonObject.results.length; i++ )
 				{	
 					table += `<tr>`;
-					table += `<td>${jsonObject.results[i]["Name"]}</td>`;
-					table += `<td>${jsonObject.results[i]["Phone"]}</td>`;
-					table += `<td>${jsonObject.results[i]["Email"]}</td>`;
-					table += `<td><button>Edit</button>`;
+					table += `<td id="nameColumn${i}">${jsonObject.results[i]["Name"]}</td>`;
+					table += `<td id="phoneColumn${i}">${jsonObject.results[i]["Phone"]}</td>`;
+					table += `<td id="emailColumn${i}">${jsonObject.results[i]["Email"]}</td>`;
+					table += `<td><button id="editButton${i}" onClick=editContact(${i})>Edit</button>`;
 					table += `<button>Delete</button></td>`;
 					table += `</tr>`;
 				}
@@ -245,4 +245,54 @@ function searchContact()
 		document.getElementById("contactSearchResult").innerHTML = err.message;
 	}
 	
+}
+
+
+function editContact(index) {
+	let oldName = document.getElementById(`nameColumn${index}`).innerHTML;
+	let oldPhone = document.getElementById(`phoneColumn${index}`).innerHTML;
+	let oldEmail = document.getElementById(`emailColumn${index}`).innerHTML;
+
+	document.getElementById(`nameColumn${index}`).innerHTML = `<input id="nameInput${index}" type="text" value=${oldName}></input>`;
+	document.getElementById(`phoneColumn${index}`).innerHTML = `<input id="phoneInput${index}" type="text" value=${oldPhone}></input>`;
+	document.getElementById(`emailColumn${index}`).innerHTML = `<input id="emailInput${index}" type="text" value=${oldEmail}></input>`;
+
+	document.getElementById(`editButton${index}`).innerHTML = `<button id="updateButton${i}" onClick=updateContact(${i})>Update</button>`;
+}
+
+function updateContact(index) {
+	let newName = document.getElementById(`nameInput${index}`).innerHTML;
+	let newPhone = document.getElementById(`phoneInput${index}`).innerHTML;
+	let newEmail = document.getElementById(`emailInput${index}`).innerHTML;
+
+	let tmp = {
+        Name: newName,
+        Phone: newPhone,
+        Email: newEmail,
+        UserId: userId
+    };
+	let jsonPayload = JSON.stringify( tmp );
+
+	let url = urlBase + '/UpdateContacts.' + extension;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				document.getElementById(`nameInput${index}`).innerHTML = `<td id="nameColumn${index}">${newName}</td>`; 
+				document.getElementById(`phoneInput${index}`).innerHTML = `<td id="nameColumn${index}">${newPhone}</td>`; 
+				document.getElementById(`emailInput${index}`).innerHTML = `<td id="nameColumn${index}">${newEmail}</td>`; 
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		console.log("Update Failed");
+	}	
 }
