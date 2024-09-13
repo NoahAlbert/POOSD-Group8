@@ -2,9 +2,9 @@
 
 ## Contributors:
 
+- Nicholas Piazza - Project Manager
 - Noah Albert - mySQL/Database
 - AJ Martin - Frontend
 - Joe Hoang - Frontend
 - Jason Torres - API
-
-Currently this project just has the professor provided files, we will make changes to them later
+- Patrik De Quevedo - API

@@ -189,6 +189,8 @@ function addContact()
 	{
 		document.getElementById("contactAddResult").innerHTML = err.message;
 	}
+
+	
 	
 }
 
@@ -233,7 +235,7 @@ function searchContact()
 					table += `<td id="emailColumn${i}">${jsonObject.results[i]["Email"]}</td>`;
 					table += `<td><span id=editButtonSpan${i}><button id="editButton${i}" onClick=editContact(${i})>Edit</button></span>`;
 					table += `<span id="deleteButtonSpan${i}">`;
-					table += `<button>Delete</button></span></td>`;
+					table += `<button id="deleteButton${i}" onClick=deleteContact(${i})>Delete</button></span></td>`;
 					table += `</tr>`;
 					map1.set(i, jsonObject.results[i]["ID"]);
 				}
@@ -261,6 +263,47 @@ function editContact(index) {
 	document.getElementById(`emailColumn${index}`).innerHTML = `<input id="emailInput${index}" type="text" value=${oldEmail}></input>`;
 
 	document.getElementById(`editButtonSpan${index}`).innerHTML = `<button id="updateButton${index}" onClick=updateContact(${index})>Update</button>`;
+}
+
+function deleteContact(index) {
+	
+	let delete_name = document.getElementById(`nameColumn${index}`).innerHTML;
+	
+	let check_delete = confirm('Are You Sure You Want To Delete The Contact: ' + delete_name);
+
+	if (check_delete === true)
+	{
+
+		let tmp = {
+			id: map1.get(index)
+		};
+	
+		let jsonPayload = JSON.stringify( tmp );
+	
+		let url = urlBase + '/DeleteContacts.' + extension;
+	
+		let xhr = new XMLHttpRequest();
+		xhr.open("POST", url, true);
+		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+		try
+		{
+			xhr.onreadystatechange = function() 
+			{
+				if (this.readyState == 4 && this.status == 200) 
+				{
+					searchContact();
+				}
+			};
+			xhr.send(jsonPayload);
+		}
+		catch(err)
+		{
+			console.log("Update Failed");
+		}	
+	}
+
+
+
 }
 
 function updateContact(index) {
