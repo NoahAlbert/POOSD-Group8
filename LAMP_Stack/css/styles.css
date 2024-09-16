@@ -20,6 +20,11 @@
 body 
 {
     background-color: #707070;
+    background-image: url('../images/pexels-jplenio-1103970.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
 }
 
 #title 
@@ -27,9 +32,13 @@ body
     font-size: 40px;
     width: 100%;
     margin: 2% 5%;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FFFFFF;
+    font-family: Kanit;
+    color: #000000;
+    text-shadow: 4px 4px 4px #636363;
 }
 
 #contactsTable
@@ -63,10 +72,15 @@ body
 #loginDiv
 {
     font-size: 30px;
-    width: 70%;
-    margin-left: 15%;
+    opacity: 0.9;
+    width: 40%;
+    /* margin-left: 15%; */
     padding: 25px;
-    background-color: #b2b2b2;
+    max-width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    background-color: #7fa0a6;
 }
 
 #registerDiv
@@ -98,10 +112,11 @@ body
 
 .buttons
 {
-    font-size: 30px;
+    font-size: 20px;
     border-radius: 25px;
-    width: 50%;
-    margin-left: 25%;
+    width: auto;
+    /* margin-left: 25%; */
+    transition: 0.5s;
     font-family: 'Ubuntu', sans-serif;
 }
 
@@ -112,6 +127,11 @@ body
 }
 
 #firstName
+{
+    font-size: 30px;
+}
+
+#lastName
 {
     font-size: 30px;
 }
