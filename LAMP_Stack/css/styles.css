@@ -1,25 +1,7 @@
-.column 
-{
-    float: left;
-    width: 33.33%;
-}
-  
-.row:after 
-{
-    content: "";
-    display: table;
-    clear: both;
-}
 
-.tableElement 
+body
 {
-    border: 2px solid black;
-    margin: 0px;
-}
-
-body 
-{
-    background-color: #707070;
+    background-color: #008080;
     background-image: url('../images/pexels-jplenio-1103970.jpg');
     background-position: center center;
     background-size: cover;
@@ -27,7 +9,7 @@ body
     background-attachment:fixed;
 }
 
-#title 
+#title
 {
     font-size: 40px;
     width: 100%;
@@ -43,32 +25,75 @@ body
     background-color: antiquewhite;
 }
 
-#contactsTable
-{
-    width: 100%;
-    border: 1px solid lightblue;
-    font-size: 18px;
+p {
+    display: inline-block;
 }
 
-#contactsTable th, #contactsTable td 
-{
+[id^="contactSpan"] {
+    width: 80%;
+    display: inline-block;
+    border-top: 6px solid #b3bfbd;
+    margin-bottom: 15px;
     text-align: left;
-    padding: 18px;
+    font-size: 0.75em;
 }
 
-#contactsTable td 
-{
-    background-color: lightblue;
+[id^="nameSpan"] {
+    width: 50%;
+    display: inline-block;
 }
 
-#contactsTable th
-{
-    background-color: cornflowerblue;
+[id^="phoneSpan"] {
+    width: 50%;
+    display: inline-block;
 }
 
-#contactsTable tr 
-{
-    border-bottom: 1px solid white;
+[id^="emailSpan"] {
+    width: 100%;
+    display: inline-block;
+}
+
+[id^="buttonSpan"] {
+    width: 100%;
+    display: inline-block;
+
+}
+
+[id^="nameInput"] {
+    border-radius: 1px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 400px;
+}
+
+[id^="phoneInput"] {
+    border-radius: 1px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 400px;
+}
+
+[id^="emailInput"] {
+    border-radius: 1px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 400px;
+}
+
+[id^="editButton"] {
+    float:right;
+}
+
+[id^="deleteButton"] {
+    float:right;
+}
+
+#divTitle {
+    margin: 0 0 15px 0;
+}
+
+#contactTableSpan {
+    align-items: center;
 }
 
 #loginDiv
@@ -101,7 +126,7 @@ body
     flex-direction: column;
     padding: 25px;
     font-size: 30px;
-    max-width: 40%; 
+    max-width: 40%;
     margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
@@ -116,36 +141,65 @@ body
     width: 70%;
     margin-left: 15%;
     padding: 25px;
-    background-color: #b2b2b2;
+    background-color: #f3eed7;
+    border: 3px solid #aea999;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-family: Montserrat;
+    letter-spacing: 2px;
 }
 
-#accessUIDiv
+#contactSearchDiv
 {
     font-size: 30px;
     width: 70%;
     margin-left: 15%;
     padding: 25px;
-    background-color: #b2b2b2;
+    background-color: #f3eed7;
+    border: 3px solid #aea999;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-family: Montserrat;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+#addContactDiv
+{
+    font-size: 30px;
+    width: 70%;
+    margin-left: 15%;
+    padding: 25px;
+    background-color: #f3eed7;
+    border: 3px solid #aea999;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-family: Montserrat;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+#addContactButton {
+    width: 100px;
 }
 
 .buttons
 {
-    background-color: white; 
-    border: none;              
-    padding: 10px 20px;       
-    text-align: center;        
-    font-size: 16px;           
-    margin: 4px 2px;          
-    cursor: pointer;          
-    border-radius: 25px;      
-    transition: background-color 0.5s; 
+    background-color: white;
+    border: 2px solid black;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    width: auto;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s;
     border: black;
-    float: right;
 }
 
 .buttons:hover{
-    background-color: #00d5124f;
-    color: #FFFFFF;
+    background-color: lightgray;
     opacity: 50%;
 }
 
@@ -177,22 +231,59 @@ body
 	font-size: 30px;
     border-radius: 10px;
 }
+
+#searchSpan
+{
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%;
+}
 #searchText
 {
-	font-size: 30px;
+	border: none;
+    padding: 10px 15px;
+    border-radius: 0px;
+    font-size: 16px;
+    flex-grow: 1;
+    outline: none;
+    width: auto;
+    margin: 0%;
+    text-align: left;
 }
+#searchContactButton
+{
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 0px;
+    font-size: 16px;
+    margin: 0%;
+}
+
+#searchIcon {
+    height: 20px;
+    color: white;
+}
+
+
 #contactText
 {
 	font-size: 30px;
 }
 
 input[type="text"],input[type="password"]{
-    border-radius: 25px;
+    border-radius: 3px;
     text-align: center;
     width: 80%;
-    margin-left: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
     margin-bottom: 2%;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #login-title{
@@ -203,7 +294,7 @@ input[type="text"],input[type="password"]{
     margin-left: 5%;
     margin-bottom: 2%;
     font-family:'montserrat', sans-serif;
-    
+
     color: #000000;
 }
 
@@ -226,7 +317,6 @@ input[type="text"],input[type="password"]{
     text-align: center;
     margin-left: 5%;
     margin-bottom: 2%;
-    font-family: 'Ubuntu', sans-serif;
     color: #95060a;
 }
 
@@ -247,7 +337,6 @@ select{
     margin-left: 35%;
     margin-top: 2%;
     font-size: 0.75em;
-    font-family: 'Ubuntu', sans-serif;
 }
 
 #contactSearchResult{
@@ -259,9 +348,7 @@ select{
     font-size: 0.8em;
     width: 90%;
     text-align: center;
-    margin-left: 5%;
     margin-top: 2%;
     margin-bottom: 1%;
-    font-family: 'Ubuntu', sans-serif;
     color: #95060a;
 }
