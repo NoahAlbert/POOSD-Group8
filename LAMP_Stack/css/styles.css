@@ -1,25 +1,7 @@
-.column 
-{
-    float: left;
-    width: 33.33%;
-}
-  
-.row:after 
-{
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.tableElement 
-{
-    border: 2px solid black;
-    margin: 0px;
-}
 
 body 
 {
-    background-color: #707070;
+    background-color: #008080;
     background-image: url('../images/pexels-jplenio-1103970.jpg');
     background-position: center center;
     background-size: cover;
@@ -41,32 +23,107 @@ body
     text-shadow: 4px 4px 4px #636363;
 }
 
-#contactsTable
-{
-    width: 100%;
-    border: 1px solid lightblue;
-    font-size: 18px;
+p {
+    display: inline-block;
 }
 
-#contactsTable th, #contactsTable td 
-{
+[id^="contactSpan"] {
+    width: 80%;
+    display: inline-block;
+    border-top: 6px solid #b3bfbd;
+    margin-bottom: 15px;
     text-align: left;
-    padding: 18px;
+    font-size: 0.75em;
 }
 
-#contactsTable td 
-{
-    background-color: lightblue;
+[id^="nameSpan"] {
+    width: 50%;
+    display: inline-block;
 }
 
-#contactsTable th
-{
-    background-color: cornflowerblue;
+[id^="phoneSpan"] {
+    width: 50%;
+    display: inline-block;
 }
 
-#contactsTable tr 
-{
-    border-bottom: 1px solid white;
+[id^="emailSpan"] {
+    width: 100%;
+    display: inline-block;
+}
+
+[id^="buttonSpan"] {
+    width: 100%;
+    display: inline-block;
+
+}
+
+[id^="editButton"] {
+    background-color: white; 
+    border: none;              
+    padding: 10px 20px;       
+    text-align: center;        
+    font-size: 16px;           
+    margin: 4px 2px;          
+    cursor: pointer;          
+    border-radius: 25px;      
+    transition: background-color 0.3s; 
+    border: black;
+    float: right;
+}
+
+[id^="editButton"]:hover {
+    background-color: lightgray;
+}
+
+[id^="deleteButton"] {
+    background-color: white; 
+    border: none;            
+    padding: 10px 20px;      
+    text-align: center;       
+    font-size: 16px;          
+    margin: 4px 2px;          
+    cursor: pointer;          
+    border-radius: 25px;      
+    transition: background-color 0.3s;
+    border: black;
+    float: right;
+}
+
+[id^="deleteButton"]:hover {
+    background-color: lightgray;
+}
+
+[id^="nameInput"] {
+    border-radius: 1px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 400px;
+}
+
+[id^="phoneInput"] {
+    border-radius: 1px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 400px;
+}
+
+[id^="emailInput"] {
+    border-radius: 1px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 400px;
+}
+
+
+#contactTableDiv {
+    
+    font-family: Montserrat;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+#contactTableSpan {
+    align-items: center;
 }
 
 #loginDiv
@@ -98,7 +155,10 @@ body
     width: 70%;
     margin-left: 15%;
     padding: 25px;
-    background-color: #b2b2b2;
+    background-color: #f3eed7;
+    border: 3px solid #aea999;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 #accessUIDiv
@@ -107,7 +167,10 @@ body
     width: 70%;
     margin-left: 15%;
     padding: 25px;
-    background-color: #b2b2b2;
+    background-color: #f3eed7;
+    border: 3px solid #aea999;
+    border-radius: 10px;
+    margin-top: 10px;
 }
 
 .buttons
@@ -149,10 +212,46 @@ body
 {
 	font-size: 30px;
 }
+
+#searchSpan
+{
+    display: flex;                    
+    align-items: center;              
+    border: 1px solid #ccc;           
+    border-radius: 5px;              
+    overflow: hidden;                
+    width: 100%;                     
+}
 #searchText
 {
-	font-size: 30px;
+	border: none;                     
+    padding: 10px 15px;            
+    border-radius: 0px;
+    font-size: 16px;   
+    flex-grow: 1;
+    outline: none;
+    width: auto;
+    margin-left: 0%;
+    margin-bottom: 0%;    
+    text-align: left;
 }
+#searchContactButton
+{
+    background-color: #007BFF;
+    color: white;             
+    border: none;             
+    padding: 10px 15px;              
+    cursor: pointer;      
+    border-radius: 0px;
+    font-size: 16px;  
+}
+
+#searchIcon {
+    height: 20px;
+    color: white;
+}
+
+
 #contactText
 {
 	font-size: 30px;
