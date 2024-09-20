@@ -4,9 +4,9 @@
 
 ## Contributors:
 
-- Nicholas Piazza - NickPiazza21 - Project Manager
+- [Nicholas Piazza](github.com/NickPiazza21) - Project Manager
 - Noah Albert - NoahAlbert - mySQL/Database
-- AJ Martin - asjm223 Frontend
+- AJ Martin - asjm223 - Frontend
 - Joe Hoang - joehoang13 - Frontend
 - Jason Torres - JaceDaDorito - API
 - Patrik De Quevedo - patrikdq3 - API
