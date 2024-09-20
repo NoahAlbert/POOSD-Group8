@@ -36,9 +36,11 @@ body
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    font-family: Kanit;
+    font-family: 'montserrat', sans-serif;
+    border-radius: 10px;
     color: #000000;
-    text-shadow: 4px 4px 4px #636363;
+    /* text-shadow: 4px 4px 4px #636363; */
+    background-color: antiquewhite;
 }
 
 #contactsTable
@@ -73,23 +75,39 @@ body
 {
     font-size: 30px;
     opacity: 0.9;
-    width: 40%;
+    /* width: 40%; */
     /* margin-left: 15%; */
     padding: 25px;
     max-width: 20%;
     margin-left: auto;
     margin-right: auto;
     border-radius: 10px;
-    background-color: #7fa0a6;
+    background-color: #f3eed7;
+}
+
+#backDiv
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 #registerDiv
 {
-    font-size: 30px;
-    width: 70%;
-    margin-left: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     padding: 25px;
-    background-color: #b2b2b2;
+    font-size: 30px;
+    max-width: 40%; 
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #f3eed7;
 }
 
 #loggedInDiv
@@ -112,12 +130,17 @@ body
 
 .buttons
 {
-    font-size: 20px;
-    border-radius: 25px;
-    width: auto;
-    /* margin-left: 25%; */
-    transition: 0.5s;
-    font-family: 'Ubuntu', sans-serif;
+    background-color: white; 
+    border: none;              
+    padding: 10px 20px;       
+    text-align: center;        
+    font-size: 16px;           
+    margin: 4px 2px;          
+    cursor: pointer;          
+    border-radius: 25px;      
+    transition: background-color 0.5s; 
+    border: black;
+    float: right;
 }
 
 .buttons:hover{
@@ -129,25 +152,30 @@ body
 #firstName
 {
     font-size: 30px;
+    border-radius: 10px;
 }
 
 #lastName
 {
     font-size: 30px;
+    border-radius: 10px;
 }
 
 #loginName
 {
 	font-size: 30px;
+    border-radius: 10px;
 }
 
 #loginName
 {
 	font-size: 30px;
+    border-radius: 10px;
 }
 #loginPassword
 {
 	font-size: 30px;
+    border-radius: 10px;
 }
 #searchText
 {
@@ -167,15 +195,28 @@ input[type="text"],input[type="password"]{
     font-family: 'Ubuntu', sans-serif;
 }
 
-#inner-title{
+#login-title{
     display: inline-block;
-    font-size: 0.8em;
+    font-size: 0.9em;
     width: 90%;
     text-align: center;
     margin-left: 5%;
     margin-bottom: 2%;
-    font-family: 'Ubuntu', sans-serif;
-    color: #95060a;
+    font-family:'montserrat', sans-serif;
+    
+    color: #000000;
+}
+
+#inner-title{
+    display: inline-block;
+    font-size: 1.2em;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    font-family:'montserrat', sans-serif;
+    font-weight: 700;
+    color: #000000;
 }
 
 #loginResult{
