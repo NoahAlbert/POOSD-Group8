@@ -6,7 +6,7 @@
 
 - [Nicholas Piazza](https://github.com/NickPiazza21) - Project Manager
 - [Noah Albert](https://github.com/NoahAlbert) - mySQL/Database
-- [AJ Martin](https://github.com/asjm223) - Frontend
+- [Andrew Martin](https://github.com/asjm223) - Frontend
 - [Joe Hoang](https://github.com/joehoang13) - Frontend
 - [Jason Torres](https://github.com/JaceDaDorito) - API
 - [Patrik De Quevedo](https://github.com/patrikdq3) - API
