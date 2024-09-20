@@ -1,6 +1,6 @@
-# POOSD Team 8 Project 1
+# Contacts Manager Web App
 
-<img src="https://github.com/NoahAlbert/POOSD-Group8/blob/main/docs/sad-thump-up-cat-sad-cat.gif">
+<img src="https://github.com/NoahAlbert/POOSD-Group8/blob/main/docs/Capture.PNG">
 
 ## Contributors:
 
