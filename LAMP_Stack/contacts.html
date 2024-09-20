@@ -24,7 +24,8 @@
 	<button type="button" id="logoutButton" class="buttons" onclick="doLogout();"> Log Out </button>
 </div>
 
-<div id="accessUIDiv">
+<div id="contactSearchDiv">
+	<h2 id="divTitle">Contact Search</h3>
 	<span id="searchSpan">
 		<button type="button" id="searchContactButton" class="buttons" onclick="searchContact();"> <img src="images/search_icon.png" id="searchIcon"></img> </button><br />
 		<input type="text" id="searchText" placeholder="Contact To Search For"/>
@@ -32,11 +33,14 @@
 	<span id="contactSearchResult"></span>
 	<span id="contactTableSpan"></span>
 
-	<br />
+</div>
+
+<div id="addContactDiv">
+	<h2 id="divTitle">Add Contact</h2>
 	<input type="text" id="contactName" placeholder="Name of Contact">
 	<input type="text" id="phoneNumber" placeholder="Phone Number">
 	<input type="text" id="contactEmail" placeholder="Email">
-	<button type="button" id="addcontactButton" class="buttons" onclick="addContact();"> Add Contact </button><br />
+	<button type="button" id="addContactButton" class="buttons" onclick="addContact();"> Submit </button><br />
 	<span id="contactAddResult"></span>
 </div>
 

@@ -18,7 +18,7 @@ body
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    font-family: Kanit;
+    font-family: Montserrat;
     color: #000000;
     text-shadow: 4px 4px 4px #636363;
 }
@@ -57,42 +57,6 @@ p {
 
 }
 
-[id^="editButton"] {
-    background-color: white; 
-    border: none;              
-    padding: 10px 20px;       
-    text-align: center;        
-    font-size: 16px;           
-    margin: 4px 2px;          
-    cursor: pointer;          
-    border-radius: 25px;      
-    transition: background-color 0.3s; 
-    border: black;
-    float: right;
-}
-
-[id^="editButton"]:hover {
-    background-color: lightgray;
-}
-
-[id^="deleteButton"] {
-    background-color: white; 
-    border: none;            
-    padding: 10px 20px;      
-    text-align: center;       
-    font-size: 16px;          
-    margin: 4px 2px;          
-    cursor: pointer;          
-    border-radius: 25px;      
-    transition: background-color 0.3s;
-    border: black;
-    float: right;
-}
-
-[id^="deleteButton"]:hover {
-    background-color: lightgray;
-}
-
 [id^="nameInput"] {
     border-radius: 1px;
     padding: 10px;
@@ -114,12 +78,16 @@ p {
     width: 400px;
 }
 
+[id^="editButton"] {
+    float:right;
+}
 
-#contactTableDiv {
-    
-    font-family: Montserrat;
-    letter-spacing: 2px;
-    text-align: center;
+[id^="deleteButton"] {
+    float:right;
+}
+
+#divTitle {
+    margin: 0 0 15px 0;
 }
 
 #contactTableSpan {
@@ -131,7 +99,6 @@ p {
     font-size: 30px;
     opacity: 0.9;
     width: 40%;
-    /* margin-left: 15%; */
     padding: 25px;
     max-width: 20%;
     margin-left: auto;
@@ -159,9 +126,11 @@ p {
     border: 3px solid #aea999;
     border-radius: 10px;
     margin-bottom: 10px;
+    font-family: Montserrat;
+    letter-spacing: 2px;
 }
 
-#accessUIDiv
+#contactSearchDiv
 {
     font-size: 30px;
     width: 70%;
@@ -171,21 +140,47 @@ p {
     border: 3px solid #aea999;
     border-radius: 10px;
     margin-top: 10px;
+    font-family: Montserrat;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+#addContactDiv
+{
+    font-size: 30px;
+    width: 70%;
+    margin-left: 15%;
+    padding: 25px;
+    background-color: #f3eed7;
+    border: 3px solid #aea999;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-family: Montserrat;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+#addContactButton {
+    width: 100px;
 }
 
 .buttons
 {
-    font-size: 20px;
-    border-radius: 25px;
+    background-color: white; 
+    border: 2px solid black;            
+    padding: 10px 20px;      
+    text-align: center;       
+    font-size: 16px;          
     width: auto;
-    /* margin-left: 25%; */
-    transition: 0.5s;
-    font-family: 'Ubuntu', sans-serif;
+    margin: 4px 2px;          
+    cursor: pointer;          
+    border-radius: 20px;      
+    transition: background-color 0.3s;
+    border: black;
 }
 
 .buttons:hover{
-    background-color: #00d5124f;
-    color: #FFFFFF;
+    background-color: lightgray;
     opacity: 50%;
 }
 
@@ -231,8 +226,7 @@ p {
     flex-grow: 1;
     outline: none;
     width: auto;
-    margin-left: 0%;
-    margin-bottom: 0%;    
+    margin: 0%;    
     text-align: left;
 }
 #searchContactButton
@@ -244,6 +238,7 @@ p {
     cursor: pointer;      
     border-radius: 0px;
     font-size: 16px;  
+    margin: 0%;
 }
 
 #searchIcon {
@@ -258,12 +253,13 @@ p {
 }
 
 input[type="text"],input[type="password"]{
-    border-radius: 25px;
+    border-radius: 3px;
     text-align: center;
     width: 80%;
-    margin-left: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
     margin-bottom: 2%;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #inner-title{
@@ -273,7 +269,6 @@ input[type="text"],input[type="password"]{
     text-align: center;
     margin-left: 5%;
     margin-bottom: 2%;
-    font-family: 'Ubuntu', sans-serif;
     color: #95060a;
 }
 
@@ -284,7 +279,6 @@ input[type="text"],input[type="password"]{
     text-align: center;
     margin-left: 5%;
     margin-bottom: 2%;
-    font-family: 'Ubuntu', sans-serif;
     color: #95060a;
 }
 
@@ -305,7 +299,6 @@ select{
     margin-left: 35%;
     margin-top: 2%;
     font-size: 0.75em;
-    font-family: 'Ubuntu', sans-serif;
 }
 
 #contactSearchResult{
@@ -317,9 +310,7 @@ select{
     font-size: 0.8em;
     width: 90%;
     text-align: center;
-    margin-left: 5%;
     margin-top: 2%;
     margin-bottom: 1%;
-    font-family: 'Ubuntu', sans-serif;
     color: #95060a;
 }

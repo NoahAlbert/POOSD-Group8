@@ -188,10 +188,7 @@ function addContact()
 	catch(err)
 	{
 		document.getElementById("contactAddResult").innerHTML = err.message;
-	}
-
-	
-	
+	}	
 }
 
 function searchContact()
@@ -238,8 +235,8 @@ function searchContact()
 					table += `<p id="email${i}">${jsonObject.results[i]["Email"]}</p>`;
 					table += `</span>`;
 					table += `<span id=buttonSpan${i}>`;
-					table += `<button id="editButton${i}" onClick=editContact(${i})>Edit</button>`;
-					table += `<button id="deleteButton${i}" onClick=deleteContact(${i})>Delete</button>`;
+					table += `<button id="editButton${i}" class="buttons" onClick=editContact(${i})>Edit</button>`;
+					table += `<button id="deleteButton${i}" class="buttons" onClick=deleteContact(${i})>Delete</button>`;
 					table += `</span>`;
 					table += `</span>`;
 					map1.set(i, jsonObject.results[i]["ID"]);
