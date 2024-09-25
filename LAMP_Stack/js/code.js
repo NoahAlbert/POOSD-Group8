@@ -2,12 +2,7 @@ const urlBase = 'http://cop4331contacts.online/LAMPAPI';
 const extension = 'php';
 
 
-// Used for password requirements
-var myInput = document.getElementById("loginPassword");
-var letter = document.getElementById("letter");
-var capital = document.getElementById("capital");
-var number = document.getElementById("number");
-var length = document.getElementById("length");
+
 
 // Used for add contacts modal
 const openBtn = document.getElementById("openModal");
@@ -198,6 +193,7 @@ function addContact()
 				document.getElementById("contactName").value = "";
 				document.getElementById("phoneNumber").value = "";
 				document.getElementById("contactEmail").value = "";
+				searchContact();
 			}
 		};
 		xhr.send(jsonPayload);
@@ -372,21 +368,30 @@ function updateContact(index) {
 }
 
 // Add Contacts modal pop up
-openBtn.addEventListener("click", () => {
+function openAddContact()
+{
+
 	modal.classList.add("open");
-  });
-  
-  closeBtn.addEventListener("click", () => {
-	modal.classList.remove("open");
-  });
+
+	  
+	closeBtn.addEventListener("click", () => {
+		modal.classList.remove("open");
+	});
+}
   
 
 // PASSWORD REQUIREMENTS
-
-if (window.location.href == 'register.html')
+function validSignup()
 {
+	// Used for password requirements
+	let myInput = document.getElementById("loginPassword");
+	let letter = document.getElementById("letter");
+	let capital = document.getElementById("capital");
+	let number = document.getElementById("number");
+	let length = document.getElementById("length");
+
 	// When the user clicks on the password field, show the message box
-	myInput.onfocus = function() {document.getElementById("message").style.display = "block";}
+	document.getElementById("message").style.display = "block";
 
 	// When the user clicks outside of the password field, hide the message box
 	myInput.onblur = function() {
