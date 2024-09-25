@@ -21,8 +21,6 @@ body
     font-family: 'montserrat', sans-serif;
     border-radius: 10px;
     color: #000000;
-    /* text-shadow: 4px 4px 4px #636363; */
-    background-color: antiquewhite;
 }
 
 p {
@@ -135,7 +133,7 @@ p {
     background-color: #f3eed7;
 }
 
-#loggedInDiv
+#backToLoginDiv
 {
     font-size: 30px;
     width: 70%;
@@ -187,6 +185,7 @@ p {
 {
     background-color: white;
     border: 2px solid black;
+    display: inline-block;
     padding: 10px 20px;
     text-align: center;
     font-size: 16px;
@@ -221,11 +220,6 @@ p {
     border-radius: 10px;
 }
 
-#loginName
-{
-	font-size: 30px;
-    border-radius: 10px;
-}
 #loginPassword
 {
 	font-size: 30px;
