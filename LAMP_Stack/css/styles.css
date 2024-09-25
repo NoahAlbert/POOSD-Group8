@@ -346,3 +346,86 @@ select{
     margin-bottom: 1%;
     color: #95060a;
 }
+
+/* STYLING FOR PASSWORD REQUIREMENT */
+  /* The message box is shown when the user clicks on the password field */
+  #message {
+    display:none;
+    background: #f3eed7;
+    color: #000;
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+  }
+  
+  #message p {
+    padding: 10px 35px;
+    font-size: 18px;
+  }
+  
+  /* Add a green text color and a checkmark when the requirements are right */
+  .valid {
+    color: green;
+  }
+  
+  /* .valid:before {
+    position: relative;
+    left: -35px;
+    content: "&#10004;";
+  } */
+  
+  /* Add a red text color and an "x" icon when the requirements are wrong */
+  .invalid {
+    color: red;
+  }
+  
+  /* .invalid:before {
+    position: relative;
+    left: -35px;
+    content: "&#10006;";
+  } */
+
+
+  /* STYLING FOR ADD CONTACTS MODAL */
+  .modal {
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: -1;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal.open {
+    opacity: 1;
+    z-index: 999;
+  }
+
+  .modal-inner
+  {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    padding: 15px 25px;
+    text-align: center;
+    width: 380px;
+  }
+
+  .modal-inner h2
+  {
+    margin: 0;
+  }
+
+  .modal-inner p
+  {
+    line-height: 24px;
+    margin: 10px 0;
+  }
+  

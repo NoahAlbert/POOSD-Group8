@@ -1,7 +1,7 @@
 <html>
 <head>
 	<title>COP 4331 Contacts Project</title>
-	<script type="text/javascript" src="js/code.js"></script>
+	
     <link href="css/styles.css" rel="stylesheet">
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +22,7 @@
 <div id="backToLoginDiv">
 	<span id="userName"></span><br />
 	<button type="button" id="logoutButton" class="buttons" onclick="doLogout();"> Log Out </button>
+	<button id="openModal" class="buttons">Add Contact</button>
 </div>
 
 <div id="contactSearchDiv">
@@ -35,14 +36,18 @@
 
 </div>
 
-<div id="addContactDiv">
-	<h2 id="divTitle">Add Contact</h2>
-	<input type="text" id="contactName" placeholder="Name of Contact">
-	<input type="text" id="phoneNumber" placeholder="Phone Number">
-	<input type="text" id="contactEmail" placeholder="Email">
-	<button type="button" id="addContactButton" class="buttons" onclick="addContact();"> Submit </button><br />
-	<span id="contactAddResult"></span>
+<div class="modal" id="modal">		
+	<div id="addContactDiv" calss="modal-inner">
+		<h2 id="divTitle">Add Contact</h2>
+		<input type="text" id="contactName" placeholder="Name of Contact">
+		<input type="text" id="phoneNumber" placeholder="Phone Number">
+		<input type="text" id="contactEmail" placeholder="Email">
+		<button type="button" id="addContactButton" class="buttons" onclick="addContact();"> Submit </button><br />
+		<span id="contactAddResult"></span>
+		<button id="closeModal" class="buttons">Close</button>
+	</div>		
 </div>
 
+<script type="text/javascript" src="js/code.js"></script>
 </body>
 </html>

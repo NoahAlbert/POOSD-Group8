@@ -1,6 +1,19 @@
 const urlBase = 'http://cop4331contacts.online/LAMPAPI';
 const extension = 'php';
 
+
+// Used for password requirements
+var myInput = document.getElementById("loginPassword");
+var letter = document.getElementById("letter");
+var capital = document.getElementById("capital");
+var number = document.getElementById("number");
+var length = document.getElementById("length");
+
+// Used for add contacts modal
+const openBtn = document.getElementById("openModal");
+const closeBtn = document.getElementById("closeModal");
+const modal = document.getElementById("modal");
+
 let userId = 0;
 let firstName = "";
 let lastName = "";
@@ -264,6 +277,8 @@ function editContact(index) {
 	let oldName = document.getElementById(`name${index}`).innerHTML;
 	let oldPhone = document.getElementById(`phone${index}`).innerHTML;
 	let oldEmail = document.getElementById(`email${index}`).innerHTML;
+	
+	console.log(oldname);
 
 	document.getElementById(`name${index}`).innerHTML = `<input id="nameInput${index}" type="text" value=${oldName}></input>`;
 	document.getElementById(`phone${index}`).innerHTML = `<input id="phoneInput${index}" type="text" value=${oldPhone}></input>`;
@@ -354,4 +369,73 @@ function updateContact(index) {
 	{
 		console.log("Update Failed");
 	}	
+}
+
+// Add Contacts modal pop up
+openBtn.addEventListener("click", () => {
+	modal.classList.add("open");
+  });
+  
+  closeBtn.addEventListener("click", () => {
+	modal.classList.remove("open");
+  });
+  
+
+// PASSWORD REQUIREMENTS
+
+if (window.location.href == 'register.html')
+{
+	// When the user clicks on the password field, show the message box
+	myInput.onfocus = function() {document.getElementById("message").style.display = "block";}
+
+	// When the user clicks outside of the password field, hide the message box
+	myInput.onblur = function() {
+	document.getElementById("message").style.display = "none";
+	}
+
+	// When the user starts to type something inside the password field
+	myInput.onkeyup = function() 
+	{
+		// Validate lowercase letters
+		var lowerCaseLetters = /[a-z]/g;
+		if(myInput.value.match(lowerCaseLetters)) 
+		{
+			letter.classList.remove("invalid");
+			letter.classList.add("valid");
+		} 
+		else 
+		{
+			letter.classList.remove("valid");
+			letter.classList.add("invalid");
+		}
+
+	// Validate capital letters
+	var upperCaseLetters = /[A-Z]/g;
+	if(myInput.value.match(upperCaseLetters)) {
+		capital.classList.remove("invalid");
+		capital.classList.add("valid");
+	} else {
+		capital.classList.remove("valid");
+		capital.classList.add("invalid");
+	}
+
+	// Validate numbers
+	var numbers = /[0-9]/g;
+	if(myInput.value.match(numbers)) {
+		number.classList.remove("invalid");
+		number.classList.add("valid");
+	} else {
+		number.classList.remove("valid");
+		number.classList.add("invalid");
+	}
+
+	// Validate length
+	if(myInput.value.length >= 8) {
+		length.classList.remove("invalid");
+		length.classList.add("valid");
+	} else {
+		length.classList.remove("valid");
+		length.classList.add("invalid");
+	}
+	}
 }
