@@ -21,7 +21,6 @@ body
     font-family: 'montserrat', sans-serif;
     border-radius: 10px;
     color: #000000;
-    /* text-shadow: 4px 4px 4px #636363; */
 }
 
 p {
@@ -99,8 +98,6 @@ p {
 {
     font-size: 30px;
     opacity: 0.9;
-    /* width: 40%; */
-    /* margin-left: 15%; */
     padding: 25px;
     max-width: 20%;
     margin-left: auto;
@@ -134,7 +131,7 @@ p {
     background-color: #f3eed7;
 }
 
-#loggedInDiv
+#backToLoginDiv
 {
     font-size: 30px;
     width: 70%;
@@ -186,6 +183,7 @@ p {
 {
     background-color: white;
     border: 2px solid black;
+    display: inline-block;
     padding: 10px 20px;
     text-align: center;
     font-size: 16px;
@@ -220,11 +218,6 @@ p {
     border-radius: 10px;
 }
 
-#loginName
-{
-	font-size: 30px;
-    border-radius: 10px;
-}
 #loginPassword
 {
 	font-size: 30px;
@@ -361,29 +354,30 @@ select{
     position: relative;
     padding: 20px;
     margin-top: 10px;
+    font-family: Montserrat;
   }
-  
+
   #message p {
     padding: 10px 35px;
     font-size: 18px;
   }
-  
+
   /* Add a green text color and a checkmark when the requirements are right */
   .valid {
     color: green;
   }
-  
+
   /* .valid:before {
     position: relative;
     left: -35px;
     content: "&#10004;";
   } */
-  
+
   /* Add a red text color and an "x" icon when the requirements are wrong */
   .invalid {
     color: red;
   }
-  
+
   /* .invalid:before {
     position: relative;
     left: -35px;
@@ -402,12 +396,12 @@ select{
     bottom: 0;
     transition: all 0.3s ease-in-out;
     z-index: -1;
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  
+
   .modal.open {
     opacity: 1;
     z-index: 999;
@@ -433,4 +427,3 @@ select{
     line-height: 24px;
     margin: 10px 0;
   }
-  
