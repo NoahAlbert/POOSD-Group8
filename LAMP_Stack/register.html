@@ -18,7 +18,7 @@
 	        <input type="text" id="firstName" placeholder="First Name" /><br />
 	        <input type="text" id="lastName" placeholder="Last Name"/><br />
 	        <input type="text" id="loginName" placeholder="Username" /><br />
-	        <input type="password" id="loginPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Password" /><br />
+            <input type="password" id="loginPassword" onfocus="validSignup()" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Password" /><br />
             <span style="display: flex; width: 80%; justify-content: space-between;">
 	            <button type="button" style="margin: 4px 2px;" class="buttons" onclick="goLogin();"> Back to Login </button>
 	            <button type="button" id="RegisterButton" class="buttons" onclick="doRegister();"> Register </button>
