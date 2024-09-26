@@ -96,6 +96,10 @@ p {
 
 #loginDiv
 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
     font-size: 30px;
     opacity: 0.9;
     padding: 25px;
@@ -198,6 +202,12 @@ p {
 .buttons:hover{
     background-color: lightgray;
     opacity: 50%;
+}
+
+.button-container
+{
+    display: flex;
+    justify-content: space-around;
 }
 
 #firstName
@@ -303,6 +313,16 @@ input[type="text"],input[type="password"]{
 }
 
 #loginResult{
+    display: inline-block;
+    font-size: 0.8em;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    color: #95060a;
+}
+
+#RegisterResult{
     display: inline-block;
     font-size: 0.8em;
     width: 90%;
