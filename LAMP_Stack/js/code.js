@@ -167,6 +167,43 @@ function doLogout()
 	window.location.href = "index.html";
 }
 
+function validAddContact(Name, Phone, Email)
+{
+	if (Name == "")
+	{
+		return false;
+	}
+
+	if (Phone == "")
+	{
+		return false;
+	}
+	else 
+	{
+        var regex = /^[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$/;
+
+        if (regex.test(Phone) == false) {
+            console.log("PHONE IS NOT VALID");
+			return false;
+        }
+    }
+
+	if (Email == "")
+	{
+		return false;
+	}
+	else {
+        var regex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+
+        if (regex.test(Email) == false) {
+            console.log("EMAIL IS NOT VALID");
+			return false;
+        }
+    }
+
+	return true;
+}
+
 function addContact()
 {
 	let Name = document.getElementById("contactName").value;
@@ -191,7 +228,7 @@ function addContact()
 	{
 		xhr.onreadystatechange = function() 
 		{
-			if (this.readyState == 4 && this.status == 200) 
+			if (this.readyState == 4 && this.status == 200 && validAddContact(Name, Phone, Email)) 
 			{
 				document.getElementById("contactAddResult").innerHTML = "Contact has been added";
 
@@ -199,6 +236,10 @@ function addContact()
 				document.getElementById("phoneNumber").value = "";
 				document.getElementById("contactEmail").value = "";
 				searchContact();
+			}
+			else
+			{
+				document.getElementById("contactAddResult").innerHTML = "Invalid Contact Submission";
 			}
 		};
 		xhr.send(jsonPayload);
