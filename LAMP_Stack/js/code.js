@@ -49,6 +49,11 @@ function doLogin()
 					document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
 					return;
 				}
+				if(login == "" || password == "")
+				{
+					document.getElementById("loginResult").innerHTML = "Invalid Login field";
+					return;
+				}
 		
 				firstName = jsonObject.firstName;
 				lastName = jsonObject.lastName;
