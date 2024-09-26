@@ -211,6 +211,12 @@ function addContact()
 	let Email = document.getElementById("contactEmail").value;
 	document.getElementById("contactAddResult").innerHTML = "";
 
+	if (!validAddContact(Name, Phone, Email))
+	{
+		document.getElementById("contactAddResult").innerHTML = "Invalid Contact Submission";
+		return;
+	}
+
 	let tmp = {
         Name: Name,
         Phone: Phone,
@@ -228,19 +234,16 @@ function addContact()
 	{
 		xhr.onreadystatechange = function() 
 		{
-			if (this.readyState == 4 && this.status == 200 && validAddContact(Name, Phone, Email)) 
+			if (this.readyState == 4 && this.status == 200) 
 			{
 				document.getElementById("contactAddResult").innerHTML = "Contact has been added";
-
+				
 				document.getElementById("contactName").value = "";
 				document.getElementById("phoneNumber").value = "";
 				document.getElementById("contactEmail").value = "";
 				searchContact();
 			}
-			else
-			{
-				document.getElementById("contactAddResult").innerHTML = "Invalid Contact Submission";
-			}
+
 		};
 		xhr.send(jsonPayload);
 	}
@@ -421,7 +424,14 @@ function openAddContact()
 
 	  
 	closeBtn.addEventListener("click", () => {
+
 		modal.classList.remove("open");
+
+		document.getElementById("contactName").value = "";
+		document.getElementById("phoneNumber").value = "";
+		document.getElementById("contactEmail").value = "";
+
+		document.getElementById("contactAddResult").innerHTML = "";
 	});
 }
   
