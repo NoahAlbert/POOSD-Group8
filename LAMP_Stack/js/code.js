@@ -82,13 +82,53 @@ function goLogin()
 	window.location.href = 'index.html';
 }
 
+function validRegister(login, password, firstName, lastName)
+{
+	if (login == "")
+	{
+		return false;
+	}
+
+	if (firstName == "")
+	{
+		return false;
+	}
+
+	if (lastName == "")
+	{
+		return false;
+	}
+
+	if (password == "")
+	{
+		return false;
+	}
+	else
+	{
+		var regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+
+		if (regex.test(password) == false)
+		{	
+			console.log("PASSWORD IN NOT VALID");
+			return false;
+		}
+	}
+
+	return true;
+}
+
 function doRegister() {
 	let login = document.getElementById("loginName").value;
 	let password = document.getElementById("loginPassword").value;
 	let firstName = document.getElementById("firstName").value;
 	let lastName = document.getElementById("lastName").value;
 
-	//document.getElementById("registerResult").innerHTML = "";
+	
+	if (!validRegister(login, password, firstName, lastName))
+	{
+		document.getElementById("RegisterResult").innerHTML = "Invalid Form Field";
+		return;
+	}
 
 	let tmp = {firstName:firstName, lastName:lastName, login:login, password:password};
 	let jsonPayload = JSON.stringify(tmp);
