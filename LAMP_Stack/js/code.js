@@ -59,7 +59,9 @@ function doLogin()
 				lastName = jsonObject.lastName;
 
 				saveCookie();
-	
+				
+				// document.getElementById("userTitle").innerHTML = "Welcome " + firstName + " " + lastName; // Meant to to display users first and last name
+
 				window.location.href = "contacts.html";
 			}
 		};

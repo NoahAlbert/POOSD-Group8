@@ -21,12 +21,15 @@
 
 <div id="backToLoginDiv">
 	<span id="userName"></span><br />
-	<button type="button" id="logoutButton" class="buttons" onclick="doLogout();"> Log Out </button>
-	<button id="openModal" class="buttons" onclick="openAddContact()">Add Contact</button>
+	<div id="backToLoginDivButtonContainer">
+		<button type="button" id="logoutButton" class="buttons" onclick="doLogout();"> Log Out </button>
+		<button id="addContactButton" class="buttons" onclick="openAddContact()">Add Contact</button>
+	</div>
+	<h2 id="userTitle">Welcome</h2>
 </div>
 
 <div id="contactSearchDiv">
-	<h2 id="divTitle">Contact Search</h3>
+	<h2 id="divTitle">Contact Search</h2>
 	<span id="searchSpan">
 		<button type="button" id="searchContactButton" class="buttons" onclick="searchContact();"> <img src="images/search_icon.png" id="searchIcon"></img> </button><br />
 		<input type="text" id="searchText" placeholder="Contact To Search For"/>
@@ -43,7 +46,7 @@
 		<input type="text" id="phoneNumber" class="addContactInput" placeholder="Phone Number">
 		<input type="text" id="contactEmail" class="addContactInput" placeholder="Email">
 		<span id="contactAddResult"></span>
-		<button type="button" id="addContactButton" class="buttons" onclick="addContact();"> Submit </button><br />
+		<button type="button" id="submitButton" class="buttons" onclick="addContact();"> Submit </button><br />
 		<button id="closeModal" class="buttons">Close</button>
 	</div>		
 </div>

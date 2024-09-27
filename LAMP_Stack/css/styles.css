@@ -164,6 +164,15 @@ p {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
+#backToLoginDivButtonContainer
+{
+    display: flex;
+    /* flex-direction:column; */
+    /* align-self:center; */
+    justify-content: space-around;
+}
+
+
 #registerPrompt
 {
     font-size: 0.47em;
@@ -211,13 +220,13 @@ p {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-#addContactButton {
+#submitButton {
     width: 100px;
 }
 
 .buttons
 {
-    background-color: #FFD400;
+    background-color: #fff7cd;
     border: 2px solid black;
     display: inline-block;
     padding: 10px 20px;
@@ -387,7 +396,12 @@ input[type="text"],input[type="password"]{
 
 #logoutButton{
     width: 20%;
-    margin-left: 40%;
+    /* margin-left: 40%; */
+}
+
+#addContactButton
+{
+    width: 20%;
 }
 
 select{
