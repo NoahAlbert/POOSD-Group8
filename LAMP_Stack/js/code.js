@@ -365,7 +365,7 @@ function editContact(index) {
 	let oldPhone = document.getElementById(`phone${index}`).innerHTML;
 	let oldEmail = document.getElementById(`email${index}`).innerHTML;
 	
-	console.log(oldname);
+	
 
 	document.getElementById(`name${index}`).innerHTML = `<input id="nameInput${index}" type="text" value=${oldName}></input>`;
 	document.getElementById(`phone${index}`).innerHTML = `<input id="phoneInput${index}" type="text" value=${oldPhone}></input>`;
