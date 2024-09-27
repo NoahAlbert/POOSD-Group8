@@ -1,17 +1,28 @@
 
 body
 {
-    background-color: #008080;
-    background-image: url('../images/pexels-jplenio-1103970.jpg');
+    background-color:#FFD400;
+    background-image: url('../images/pexels-stasknop-3760323.jpg');
     background-position: center center;
     background-size: cover;
     background-repeat:no-repeat;
     background-attachment:fixed;
+
+    margin: 0;
 }
+
+/* #header
+{
+    background-image: url('../images/file2.jpg');
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+    height: 100px;
+    width: 100%;
+} */
 
 #title
 {
-    font-size: 40px;
+    font-size: 100px;
     width: 100%;
     margin: 2% 5%;
     max-width: fit-content;
@@ -30,7 +41,7 @@ p {
 [id^="contactSpan"] {
     width: 80%;
     display: inline-block;
-    border-top: 6px solid #b3bfbd;
+    border-top: 6px solid #000000d6;
     margin-bottom: 15px;
     text-align: left;
     font-size: 0.75em;
@@ -107,7 +118,9 @@ p {
     margin-left: auto;
     margin-right: auto;
     border-radius: 10px;
-    background-color: #f3eed7;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border: 3px solid #000000;
+    background-color: #ffd40075;
 }
 
 #backDiv
@@ -131,8 +144,9 @@ p {
     margin-left: auto;
     margin-right: auto;
     padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
-    background-color: #f3eed7;
+    background-color: #ffd40075;
 }
 
 #backToLoginDiv
@@ -141,12 +155,23 @@ p {
     width: 70%;
     margin-left: 15%;
     padding: 25px;
-    background-color: #f3eed7;
-    border: 3px solid #aea999;
+    background-color: #ffd40075;
+    /* border: 3px solid #000000; */
     border-radius: 10px;
     margin-bottom: 10px;
     font-family: Montserrat;
     letter-spacing: 2px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#registerPrompt
+{
+    font-size: 0.47em;
+    font-family:'montserrat', sans-serif;
+}
+
+#registerlink:hover{
+    color: #aa089e;
 }
 
 #contactSearchDiv
@@ -155,13 +180,14 @@ p {
     width: 70%;
     margin-left: 15%;
     padding: 25px;
-    background-color: #f3eed7;
-    border: 3px solid #aea999;
+    background-color: #ffd400c7;
+    /* border: 3px solid #000000; */
     border-radius: 10px;
     margin-top: 10px;
     font-family: Montserrat;
     letter-spacing: 2px;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 #addContactDiv
@@ -173,14 +199,16 @@ p {
     font-size: 30px;
     width: 70%;
     margin-left: 15%;
+    max-width: 40%;
     padding: 25px;
-    background-color: #f3eed7;
-    border: 3px solid #aea999;
+    background-color: #ffd400;
+    /* border: 3px solid #000000; */
     border-radius: 10px;
     margin-top: 10px;
     font-family: Montserrat;
     letter-spacing: 2px;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 #addContactButton {
@@ -189,7 +217,7 @@ p {
 
 .buttons
 {
-    background-color: white;
+    background-color: #FFD400;
     border: 2px solid black;
     display: inline-block;
     padding: 10px 20px;
@@ -199,12 +227,20 @@ p {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s;
-    border: black;
+    /* border: black; */
 }
 
 .buttons:hover{
     background-color: lightgray;
+    transform: translateY(-2px);
+    opacity: 50%;
+}
+
+.buttons:active{
+    background-color: lightgray;
+    transform: translateY(0px);
     opacity: 50%;
 }
 
@@ -235,6 +271,12 @@ p {
 #loginPassword
 {
 	font-size: 30px;
+    border-radius: 10px;
+}
+
+.addContactInput
+{
+    font-size: 30px;
     border-radius: 10px;
 }
 
@@ -295,12 +337,12 @@ input[type="text"],input[type="password"]{
 #login-title{
     display: inline-block;
     font-size: 0.9em;
+    font-weight: 600;
     width: 90%;
     text-align: center;
     margin-left: 5%;
     margin-bottom: 2%;
     font-family:'montserrat', sans-serif;
-
     color: #000000;
 }
 
@@ -373,7 +415,7 @@ select{
   /* The message box is shown when the user clicks on the password field */
   #message {
     display:none;
-    background: #f3eed7;
+    background: #ffd40000;
     color: #000;
     position: relative;
     padding: 20px;
