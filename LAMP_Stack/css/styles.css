@@ -20,6 +20,16 @@ body
     width: 100%;
 } */
 
+#logo 
+{
+    position: fixed;
+    width: 10%;
+    height: 10%;
+    left: 1%;
+    top: 1%;
+    object-fit: contain;
+}
+
 #title
 {
     font-size: 100px;

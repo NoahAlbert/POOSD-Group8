@@ -12,6 +12,7 @@ const modal = document.getElementById("modal");
 let userId = 0;
 let firstName = "";
 let lastName = "";
+let originalTable = document.getElementById("contactTableSpan").innerHTML;
 const map1 = new Map();
 
 function doLogin()
@@ -316,38 +317,44 @@ function searchContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				table += `<div id=contactTableDiv>`;
-				table += `<h3>CONTACT TABLE</h3>`;
-
-
 				document.getElementById("contactSearchResult").innerHTML = "Contact(s) has been retrieved";
 				let jsonObject = JSON.parse( xhr.responseText );
 				
-				for( let i=0; i<jsonObject.results.length; i++ )
+				table += `<div id=contactTableDiv>`;
+				table += `<h3>CONTACT TABLE</h3>`;
+				
+				if (typeof jsonObject.results !== 'undefined')
 				{	
-					table += `<span id=contactSpan${i}>`;
-					table += `<span id=nameSpan${i}>`;
-					table += `<p style="font-weight: bold;">Name:&nbsp;</p>`
-					table += `<p id="name${i}">${jsonObject.results[i]["Name"]}</p>`;
-					table += `</span>`;
-					table += `<span id=phoneSpan${i}>`;
-					table += `<p style="font-weight: bold;">Phone:&nbsp;</p>`
-					table += `<p id="phone${i}">${jsonObject.results[i]["Phone"]}</p>`;
-					table += `</span>`;
-					table += `<span id=emailSpan${i}>`;
-					table += `<p style="font-weight: bold;">Email:&nbsp;</p>`
-					table += `<p id="email${i}">${jsonObject.results[i]["Email"]}</p>`;
-					table += `</span>`;
-					table += `<span id=buttonSpan${i}>`;
-					table += `<button id="editButton${i}" class="buttons" onClick=editContact(${i})>Edit</button>`;
-					table += `<button id="deleteButton${i}" class="buttons" onClick=deleteContact(${i})>Delete</button>`;
-					table += `</span>`;
-					table += `</span>`;
-					map1.set(i, jsonObject.results[i]["ID"]);
+					for( let i=0; i<jsonObject.results.length; i++ )
+					{	
+						table += `<span id=contactSpan${i}>`;
+						table += `<span id=nameSpan${i}>`;
+						table += `<p style="font-weight: bold;">Name:&nbsp;</p>`
+						table += `<p id="name${i}">${jsonObject.results[i]["Name"]}</p>`;
+						table += `</span>`;
+						table += `<span id=phoneSpan${i}>`;
+						table += `<p style="font-weight: bold;">Phone:&nbsp;</p>`
+						table += `<p id="phone${i}">${jsonObject.results[i]["Phone"]}</p>`;
+						table += `</span>`;
+						table += `<span id=emailSpan${i}>`;
+						table += `<p style="font-weight: bold;">Email:&nbsp;</p>`
+						table += `<p id="email${i}">${jsonObject.results[i]["Email"]}</p>`;
+						table += `</span>`;
+						table += `<span id=buttonSpan${i}>`;
+						table += `<button id="editButton${i}" class="buttons" onClick=editContact(${i})>Edit</button>`;
+						table += `<button id="deleteButton${i}" class="buttons" onClick=deleteContact(${i})>Delete</button>`;
+						table += `</span>`;
+						table += `</span>`;
+						map1.set(i, jsonObject.results[i]["ID"]);
+					}
+					table += `</div>`;
+					console.log(table);
+					document.getElementById("contactTableSpan").innerHTML = table; 
 				}
-				table += `</div>`;
-				console.log(table);
-				document.getElementById("contactTableSpan").innerHTML = table; 
+				else
+				{
+					document.getElementById("contactTableSpan").innerHTML = originalTable;
+				}
 			}
 		};
 		xhr.send(jsonPayload);
