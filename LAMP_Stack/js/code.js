@@ -374,7 +374,7 @@ function editContact(index) {
 	
 	
 
-	document.getElementById(`name${index}`).innerHTML = `<input id="nameInput${index}" type="text" value=${oldName}></input>`;
+	document.getElementById(`name${index}`).innerHTML = `<input id="nameInput${index}" type="text" value="${oldName}"A></input>`;
 	document.getElementById(`phone${index}`).innerHTML = `<input id="phoneInput${index}" type="text" value=${oldPhone}></input>`;
 	document.getElementById(`email${index}`).innerHTML = `<input id="emailInput${index}" type="text" value=${oldEmail}></input>`;
 
