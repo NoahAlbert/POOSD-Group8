@@ -374,6 +374,7 @@ input[type="text"],input[type="password"]{
 #loginResult{
     display: inline-block;
     font-size: 0.8em;
+    font-family:'montserrat', sans-serif;
     width: 90%;
     text-align: center;
     margin-left: 5%;
@@ -384,6 +385,7 @@ input[type="text"],input[type="password"]{
 #RegisterResult{
     display: inline-block;
     font-size: 0.8em;
+    font-family:'montserrat', sans-serif;
     width: 90%;
     text-align: center;
     margin-left: 5%;
@@ -422,6 +424,7 @@ select{
 #contactAddResult{
     display: inline-block;
     font-size: 0.8em;
+    font-family:'montserrat', sans-serif;
     width: 90%;
     text-align: center;
     margin-top: 2%;
@@ -451,22 +454,24 @@ select{
     color: green;
   }
 
-  /* .valid:before {
+  .valid:before {
     position: relative;
     left: -35px;
-    content: "&#10004;";
-  } */
+    content: '\f00c';
+    font-family: FontAwesome
+  }
 
   /* Add a red text color and an "x" icon when the requirements are wrong */
   .invalid {
     color: red;
   }
 
-  /* .invalid:before {
+  .invalid:before {
     position: relative;
     left: -35px;
-    content: "&#10006;";
-  } */
+    content: '\f00d';
+    font-family: FontAwesome;
+  }
 
 
   /* STYLING FOR ADD CONTACTS MODAL */
