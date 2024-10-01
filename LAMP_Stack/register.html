@@ -1,27 +1,43 @@
 <html>
     <head>
 	    <title>COP 4331 Contacts Project</title>
-	    <script type="text/javascript" src="js/code.js"></script>
+	   
 	    <script type="text/javascript" src="js/md5.js"></script>
         <link href="css/styles.css" rel="stylesheet">	
         <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">	
+        <!-- <i class="fa-solid fa-xmark"></i> -->
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
         <style>
             h1 {text-align: center;}
         </style>
     </head>
     <body>
-        <h1 id="title"> Register Page </h1>
-        <div id="backDiv">
-	        <button type="button" id="RegisterButton" class="buttons" onclick="goLogin();"> Back to Login </button>
-        </div>
+        <header id="header"></header>
         <div id="RegisterDiv">
-	        <span id="inner-title">ENTER DESIRED INFORMATION</span>
+	        <span id="inner-title">Create Account</span>
 	        <input type="text" id="firstName" placeholder="First Name" /><br />
 	        <input type="text" id="lastName" placeholder="Last Name"/><br />
 	        <input type="text" id="loginName" placeholder="Username" /><br />
-	        <input type="password" id="loginPassword" placeholder="Password" /><br />
-	        <button type="button" id="RegisterButton" class="buttons" onclick="doRegister();"> Register </button>
-	        <span id="RegisterResult"></span>
+            <input type="password" id="loginPassword" onfocus="validSignup()" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Password" /><br />
+            <span id="RegisterResult"></span>
+            <span style="display: flex; width: 80%; justify-content: space-around;">
+	            <button type="button" style="margin: 4px 2px;" class="buttons" onclick="goLogin();"> Back to Login </button>
+	            <button type="button" id="RegisterButton" class="buttons" onclick="doRegister();"> Register </button>
+            </span>
+
+            <div id="message">
+                <p><b>Password must contain the following:</b></p></br>
+                <p id="letter" class="invalid">A <b>lowercase</b> letter</p><br />
+                <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p><br />
+                <p id="number" class="invalid">A <b>number</b></p><br />
+                <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+              </div>
         </div>
+        <script type="text/javascript" src="js/code.js"></script>
     </body>
 </html>

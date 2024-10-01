@@ -1,171 +1,395 @@
-.column 
+
+body
 {
-    float: left;
-    width: 33.33%;
-}
-  
-.row:after 
-{
-    content: "";
-    display: table;
-    clear: both;
+    background-color:#FFD400;
+    background-image: url('../images/pexels-stasknop-3760323.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+
+    margin: 0;
 }
 
-.tableElement 
+/* #header
 {
-    border: 2px solid black;
-    margin: 0px;
+    background-image: url('../images/file2.jpg');
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+    height: 100px;
+    width: 100%;
+} */
+
+#logo 
+{
+    position: fixed;
+    width: 10%;
+    height: 10%;
+    left: 1%;
+    top: 1%;
+    object-fit: contain;
 }
 
-body 
+#title
 {
-    background-color: #707070;
-}
-
-#title 
-{
-    font-size: 40px;
+    font-size: 100px;
     width: 100%;
     margin: 2% 5%;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FFFFFF;
+    font-family: 'montserrat', sans-serif;
+    border-radius: 10px;
+    color: #000000;
 }
 
-#contactsTable
-{
-    width: 100%;
-    border: 1px solid lightblue;
-    font-size: 18px;
+p {
+    display: inline-block;
 }
 
-#contactsTable th, #contactsTable td 
-{
+[id^="contactSpan"] {
+    width: 80%;
+    display: inline-block;
+    border-top: 6px solid #000000d6;
+    margin-bottom: 15px;
     text-align: left;
-    padding: 18px;
+    font-size: 0.75em;
 }
 
-#contactsTable td 
-{
-    background-color: lightblue;
+[id^="nameSpan"] {
+    width: 50%;
+    display: inline-block;
 }
 
-#contactsTable th
-{
-    background-color: cornflowerblue;
+[id^="phoneSpan"] {
+    width: 50%;
+    display: inline-block;
 }
 
-#contactsTable tr 
-{
-    border-bottom: 1px solid white;
+[id^="emailSpan"] {
+    width: 100%;
+    display: inline-block;
+}
+
+[id^="buttonSpan"] {
+    width: 100%;
+    display: inline-block;
+
+}
+
+[id^="nameInput"] {
+    border-radius: 1px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 400px;
+}
+
+[id^="phoneInput"] {
+    border-radius: 1px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 400px;
+}
+
+[id^="emailInput"] {
+    border-radius: 1px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 400px;
+}
+
+[id^="editButton"] {
+    float:right;
+}
+
+[id^="deleteButton"] {
+    float:right;
+}
+
+#divTitle {
+    margin: 0 0 15px 0;
+}
+
+#contactTableSpan {
+    align-items: center;
 }
 
 #loginDiv
 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
     font-size: 30px;
-    width: 70%;
-    margin-left: 15%;
+    opacity: 0.9;
     padding: 25px;
-    background-color: #b2b2b2;
+    max-width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border: 3px solid #000000;
+    background-color: #ffd40075;
+}
+
+#backDiv
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 #registerDiv
 {
-    font-size: 30px;
-    width: 70%;
-    margin-left: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     padding: 25px;
-    background-color: #b2b2b2;
+    font-size: 30px;
+    max-width: 40%;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #ffd40075;
 }
 
-#loggedInDiv
+#backToLoginDiv
 {
     font-size: 30px;
     width: 70%;
     margin-left: 15%;
     padding: 25px;
-    background-color: #b2b2b2;
+    background-color: #ffd40075;
+    /* border: 3px solid #000000; */
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-family: Montserrat;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-#accessUIDiv
+#backToLoginDivButtonContainer
+{
+    display: flex;
+    /* flex-direction:column; */
+    /* align-self:center; */
+    justify-content: space-around;
+}
+
+
+#registerPrompt
+{
+    font-size: 0.47em;
+    font-family:'montserrat', sans-serif;
+}
+
+#registerlink:hover{
+    color: #aa089e;
+}
+
+#contactSearchDiv
 {
     font-size: 30px;
     width: 70%;
     margin-left: 15%;
     padding: 25px;
-    background-color: #b2b2b2;
+    background-color: #ffd400c7;
+    /* border: 3px solid #000000; */
+    border-radius: 10px;
+    margin-top: 10px;
+    font-family: Montserrat;
+    letter-spacing: 2px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#addContactDiv
+{
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+    font-size: 30px;
+    padding: 25px;
+    width: 60%;
+    background-color: #ffd400;
+    border-radius: 10px;
+    font-family: Montserrat;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#submitButton {
+    width: 100px;
 }
 
 .buttons
 {
-    font-size: 30px;
-    border-radius: 25px;
-    width: 50%;
-    margin-left: 25%;
-    font-family: 'Ubuntu', sans-serif;
+    background-color: #fff7cd;
+    border: 2px solid black;
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    width: auto;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+    /* border: black; */
 }
 
 .buttons:hover{
-    background-color: #00d5124f;
-    color: #FFFFFF;
+    background-color: lightgray;
+    transform: translateY(-2px);
     opacity: 50%;
+}
+
+.buttons:active{
+    background-color: lightgray;
+    transform: translateY(0px);
+    opacity: 50%;
+}
+
+.button-container
+{
+    display: flex;
+    justify-content: space-around;
 }
 
 #firstName
 {
     font-size: 30px;
+    border-radius: 10px;
+}
+
+#lastName
+{
+    font-size: 30px;
+    border-radius: 10px;
 }
 
 #loginName
 {
 	font-size: 30px;
+    border-radius: 10px;
 }
 
-#loginName
-{
-	font-size: 30px;
-}
 #loginPassword
 {
 	font-size: 30px;
+    border-radius: 10px;
+}
+
+.addContactInput
+{
+    font-size: 30px;
+    border-radius: 10px;
+}
+
+#searchSpan
+{
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%;
 }
 #searchText
 {
-	font-size: 30px;
+	border: none;
+    padding: 10px 15px;
+    border-radius: 0px;
+    font-size: 16px;
+    flex-grow: 1;
+    outline: none;
+    width: auto;
+    margin: 0%;
+    text-align: left;
 }
+#searchContactButton
+{
+    background-color: #b5b5b5;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 0px;
+    font-size: 16px;
+    margin: 0%;
+}
+
+#searchIcon {
+    height: 20px;
+    color: white;
+}
+
+
 #contactText
 {
 	font-size: 30px;
 }
 
 input[type="text"],input[type="password"]{
-    border-radius: 25px;
+    border-radius: 3px;
     text-align: center;
     width: 80%;
-    margin-left: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
     margin-bottom: 2%;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
-#inner-title{
+#login-title{
     display: inline-block;
-    font-size: 0.8em;
+    font-size: 0.9em;
+    font-weight: 600;
     width: 90%;
     text-align: center;
     margin-left: 5%;
     margin-bottom: 2%;
-    font-family: 'Ubuntu', sans-serif;
-    color: #95060a;
+    font-family:'montserrat', sans-serif;
+    color: #000000;
+}
+
+#inner-title{
+    display: inline-block;
+    font-size: 1.2em;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    font-family:'montserrat', sans-serif;
+    font-weight: 700;
+    color: #000000;
 }
 
 #loginResult{
     display: inline-block;
     font-size: 0.8em;
+    font-family:'montserrat', sans-serif;
     width: 90%;
     text-align: center;
     margin-left: 5%;
     margin-bottom: 2%;
-    font-family: 'Ubuntu', sans-serif;
+    color: #95060a;
+}
+
+#RegisterResult{
+    display: inline-block;
+    font-size: 0.8em;
+    font-family:'montserrat', sans-serif;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-bottom: 2%;
     color: #95060a;
 }
 
@@ -178,7 +402,12 @@ input[type="text"],input[type="password"]{
 
 #logoutButton{
     width: 20%;
-    margin-left: 40%;
+    /* margin-left: 40%; */
+}
+
+#addContactButton
+{
+    width: 20%;
 }
 
 select{
@@ -186,7 +415,6 @@ select{
     margin-left: 35%;
     margin-top: 2%;
     font-size: 0.75em;
-    font-family: 'Ubuntu', sans-serif;
 }
 
 #contactSearchResult{
@@ -196,11 +424,95 @@ select{
 #contactAddResult{
     display: inline-block;
     font-size: 0.8em;
+    font-family:'montserrat', sans-serif;
     width: 90%;
     text-align: center;
-    margin-left: 5%;
     margin-top: 2%;
     margin-bottom: 1%;
-    font-family: 'Ubuntu', sans-serif;
     color: #95060a;
 }
+
+/* STYLING FOR PASSWORD REQUIREMENT */
+  /* The message box is shown when the user clicks on the password field */
+  #message {
+    display:none;
+    background: #ffd40000;
+    color: #000;
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+    font-family: Montserrat;
+  }
+
+  #message p {
+    padding: 10px 35px;
+    font-size: 18px;
+  }
+
+  /* Add a green text color and a checkmark when the requirements are right */
+  .valid {
+    color: green;
+  }
+
+  .valid:before {
+    position: relative;
+    left: -35px;
+    content: '\f00c';
+    font-family: FontAwesome
+  }
+
+  /* Add a red text color and an "x" icon when the requirements are wrong */
+  .invalid {
+    color: red;
+  }
+
+  .invalid:before {
+    position: relative;
+    left: -35px;
+    content: '\f00d';
+    font-family: FontAwesome;
+  }
+
+
+  /* STYLING FOR ADD CONTACTS MODAL */
+  .modal {
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: -1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal.open {
+    opacity: 1;
+    z-index: 999;
+  }
+
+  .modal-inner
+  {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    padding: 15px 25px;
+    text-align: center;
+    width: 380px;
+  }
+
+  .modal-inner h2
+  {
+    margin: 0;
+  }
+
+  .modal-inner p
+  {
+    line-height: 24px;
+    margin: 10px 0;
+  }

@@ -4,21 +4,28 @@
 	<script type="text/javascript" src="js/md5.js"></script>
 	<script type="text/javascript" src="js/code.js"></script>
     <link href="css/styles.css" rel="stylesheet">	
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+	<link href="css/login.css" rel="stylesheet">	
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<h1 id="title">COP 4331 LAMP Stack Demo</h1>
+<img id="logo" src="images/logo3.png">
+<header id="header"></header>
+<h1 id="title">MY YELLOW PAGES</h1>
 
 <div id="loginDiv">
 	<span id="registerResult"></span>
-	<span id="inner-title">PLEASE LOG IN</span>
+	<span id="login-title">PLEASE LOG IN</span>
 	<input type="text" id="loginName" placeholder="Username" /><br />
 	<input type="password" id="loginPassword" placeholder="Password"/><br />
-	<button type="button" id="loginButton" class="buttons" onclick="doLogin();"> Do It </button><br />
-	<br />
-	<button type="button" id="RegisterButton" class="buttons" onclick="goRegister();"> Register </button>
 	<span id="loginResult"></span>
+	<div class="button-container">
+		<button type="button" id="loginButton" class="buttons" onclick="doLogin();"> Log in </button>
+		<!-- <button type="button" id="RegisterButton" class="buttons" onclick="goRegister();"> Register </button> -->
+	</div>
+	<p id="registerPrompt">Don't Have An Account? <a id="registerLink" href="register.html">Register Now!</a></p>
 </div>
 
 </body>
